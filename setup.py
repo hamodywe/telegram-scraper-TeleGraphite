@@ -19,6 +19,7 @@ dev_requirements = [
 setup(
     name="telegraphite",
     version="0.1.0",
+    license="MIT",
     packages=find_packages(),
     install_requires=[
         "telethon>=1.24.0",

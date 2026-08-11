@@ -1,0 +1,30 @@
+# Credentials. .env is where the Telegram api_id/api_hash live -- it must
+# never be committed. example.env is the template that is.
+.env
+*.session
+*.session-journal
+
+# Runtime output
+data/
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

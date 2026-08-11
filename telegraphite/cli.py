@@ -162,8 +162,14 @@ def parse_args():
     Returns:
         Parsed arguments.
     """
+    # allow_abbrev=False: argparse otherwise accepts any unambiguous prefix,
+    # so "--l" resolved against both --limit and --log-file and the run died
+    # with "ambiguous option" instead of doing anything (issue #1). Prefixes
+    # are not a documented interface here, and silently binding one to a
+    # different option after a new flag is added is worse than rejecting it.
     parser = argparse.ArgumentParser(
-        description="Fetch and save posts from Telegram channels"
+        description="Fetch and save posts from Telegram channels",
+        allow_abbrev=False,
     )
 
     parser.add_argument(
